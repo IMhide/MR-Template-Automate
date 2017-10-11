@@ -5,6 +5,11 @@ module Steps
     end
 
     def call
+      filename = get_filename
+      File.read(filename)
+    end
+
+    def get_filename
       markdowns = Dir['*.md']
       case markdowns.size
       when 0

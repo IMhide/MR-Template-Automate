@@ -9,6 +9,8 @@ require './lib/steps/get_template'
 require './lib/steps/get_url'
 require './lib/steps/signin'
 require './lib/steps/get_group'
+require './lib/steps/set_template'
+
 
 prompt = TTY::Prompt.new
 agent = Mechanize.new
@@ -19,4 +21,4 @@ url = 'https://capsens.githost.io'
 puts "byepass get URL FOR DEV"
 page = Steps::Signin.new(prompt, agent, url).call
 path = Steps::GetGroup.new(prompt, agent, url).call
-puts path.inspect
+dunno = Steps::SetTemplate.new(agent, url, path, markdown).call
