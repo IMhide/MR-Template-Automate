@@ -13,7 +13,6 @@ module Steps
     end
 
     def get_projects_path
-      puts 'DEBUG : ' + @url + @path 
       page = @agent.get(@url + '/' +@path)
       links = []
       while true do
