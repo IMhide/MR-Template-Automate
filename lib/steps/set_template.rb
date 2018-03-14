@@ -13,7 +13,7 @@ module Steps
     end
 
     def get_projects_path
-      page = @agent.get(@url + '/' +@path)
+      page = @agent.get("#{@url}/#{@path}")
       links = []
       while true do
         links.push(page.css('a.project').map{|l| l.attribute('href').value})
